@@ -1,10 +1,11 @@
 import org.jetbrains.changelog.Changelog
 import org.jetbrains.changelog.markdownToHTML
-import org.jetbrains.intellij.platform.gradle.Constants.Constraints
 import org.jetbrains.intellij.platform.gradle.TestFrameworkType
 
 fun properties(key: String) = providers.gradleProperty(key)
 fun environment(key: String) = providers.environmentVariable(key)
+
+val robotServerPluginVersion = "0.11.24"
 
 plugins {
     id("java") // Java support
@@ -150,6 +151,6 @@ val runIdeForUiTests = intellijPlatformTesting.runIde.register("runIdeForUiTests
     }
 
     plugins {
-        robotServerPlugin(Constraints.LATEST_VERSION)
+        robotServerPlugin(robotServerPluginVersion)
     }
 }

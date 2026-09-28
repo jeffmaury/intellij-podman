@@ -39,10 +39,10 @@ dependencies {
         testFramework(TestFrameworkType.Platform)
     }
 
-    testImplementation("junit:junit:4.13.2") {
+    testCompileOnly("junit:junit:4.13.2") {
         isTransitive = false
     }
-    testImplementation("org.hamcrest:hamcrest-core:1.3")
+    testCompileOnly("org.hamcrest:hamcrest-core:1.3")
 }
 
 // Set the JVM language level used to build the project. Use Java 11 for 2020.3+, and Java 17 for 2022.2+.

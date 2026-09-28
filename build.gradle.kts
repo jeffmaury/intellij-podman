@@ -39,6 +39,8 @@ dependencies {
         testFramework(TestFrameworkType.Platform)
     }
 
+    // Required for BasePlatformTestCase/UsefulTestCase supertypes with Gradle 9.8 test classpath resolution.
+    // Keep junit non-transitive and add only the Hamcrest API needed by JUnit signatures.
     testCompileOnly("junit:junit:4.13.2") {
         isTransitive = false
     }

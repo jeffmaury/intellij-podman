@@ -1,7 +1,7 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
     <id>com.github.jeffmaury.intellijpodman</id>
-    <name>intellij-podman Template</name>
+    <name>Podman</name>
     <vendor>jeffmaury</vendor>
 
     <depends>com.intellij.modules.platform</depends>

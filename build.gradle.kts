@@ -38,6 +38,14 @@ dependencies {
         zipSigner()
         testFramework(TestFrameworkType.Platform)
     }
+
+    // Required for BasePlatformTestCase/UsefulTestCase supertypes with Gradle 9.8 test classpath resolution.
+    // Keep junit non-transitive and add hamcrest-core explicitly for org.hamcrest types in JUnit signatures.
+    testCompileOnly("junit:junit:4.13.2") {
+        isTransitive = false
+    }
+    testCompileOnly("org.hamcrest:hamcrest-core:1.3")
+    testRuntimeOnly("junit:junit:4.13.2")
 }
 
 // Set the JVM language level used to build the project. Use Java 11 for 2020.3+, and Java 17 for 2022.2+.
@@ -97,6 +105,9 @@ intellijPlatform {
     }
 
     pluginVerification {
+        failureLevel = listOf(
+            org.jetbrains.intellij.platform.gradle.tasks.VerifyPluginTask.FailureLevel.COMPATIBILITY_PROBLEMS,
+        )
         ides {
             current()
         }

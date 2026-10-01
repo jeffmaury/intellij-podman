@@ -105,6 +105,9 @@ intellijPlatform {
     }
 
     pluginVerification {
+        failureLevel = listOf(
+            org.jetbrains.intellij.platform.gradle.tasks.VerifyPluginTask.FailureLevel.COMPATIBILITY_PROBLEMS,
+        )
         ides {
             current()
         }
